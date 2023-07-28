@@ -1,0 +1,35 @@
+#AD{
+    display: flex;
+    /*width: 50%;  Adjust the image width as needed */
+    height: auto;
+  }
+
+#img_AD{
+    width: 30%;
+  }
+
+#login{
+    display: flex;
+    width: 50%; /* Adjust the image width as needed */
+    height: auto;
+  }
+  
+#login_button{
+    width: 30%;
+    background-color: none;
+    border:0 ;
+  }
+label{
+    size: 50px;
+}
+
+.button-container {
+    display: flex; /* Use flexbox to align items in a row */
+    gap: 10px; /* Add some space between buttons (optional) */
+}
+
+.button-container button {
+    border: none; /* Remove the default button styling (optional) */
+    background: none; /* Remove the default button background (optional) */
+    cursor: pointer; /* Add a pointer cursor on hover (optional) */
+}

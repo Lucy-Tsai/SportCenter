@@ -1,0 +1,172 @@
+html, h1,h2,h3,h4,h5,h6,a,p,body,header,nav,div,ul,li,form,img{
+    overflow: hidden;
+    padding: 0;
+    margin: 0 auto; 
+    color: #333333;
+    max-width: 1200px;
+    /* outline: 2px solid tomato; */
+}
+#bg{
+  background: #70cbf3 ;
+	height: 100%;
+  background-size: 1200px auto;
+}
+#news{
+    padding-top: 2%;
+    height: 50px;
+    color: #666666;
+    -webkit-animation: run 30s linear infinite;
+	animation: run 30s linear infinite;
+}
+@keyframes run{
+    from{transform: translateX(100%)}
+	to{transform: translateX(0%)}
+}
+
+#firstPage{
+    padding: 3% 0% 3% 0%;
+    color: rgb(255, 255, 255);
+    justify-content: center;
+    text-align: center;
+    font-size: 500%;
+}
+nav{
+    display: flex;
+    justify-content: center;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+li{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    /*background-image:url('image/main.png');  Replace with your desired circle color */
+    background-size: auto;
+    background-position: center;
+    border-radius: 50%; /* Set border-radius to 50% to create a circle */
+    line-height: 100Px;
+    text-align: center;
+    font-size: 14px;
+}
+
+#logo{
+    margin: 20px auto;
+}
+#one{
+	height: 200px;
+	width: 1000px;
+	position: fixed;
+	-webkit-animation: scrol1 30s linear infinite;
+	animation: scrol1 30s linear infinite;
+}
+#two{
+	height: 200px;
+	width: 1000px;
+	position: fixed;
+	-webkit-animation: scrol2 30s linear infinite;
+	animation: scrol2 30s linear infinite;
+}
+#three{
+	height: 200px;
+	width: 1000px;
+	position: fixed;
+	-webkit-animation: scroll3 30s linear infinite;
+	animation: scroll3 30s linear infinite;
+}
+#four{
+	height: 200px;
+	width: 1000px;
+	position: fixed;
+	-webkit-animation: scroll4 30s linear infinite;
+	animation: scroll4 30s linear infinite;
+}
+@keyframes scrol1{
+	from{transform: translateX(100%)}
+	to{transform: translateX(-100%)}
+  }
+@keyframes scrol2{
+	from{transform: translateX(0%)}
+	to{transform: translateX(-200%)}
+  }
+@keyframes scroll3{
+	from{transform: translateX(-100%)}
+	to{transform: translateX(-300%)}
+  }
+@keyframes scroll4{
+	from{transform: translateX(200%)}
+	to{transform: translateX(0%)}
+  }
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 1200px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+/* 其他頁面的頁首 */
+#main{
+    justify-content: center;
+    text-align: center;
+    font-size: 400%;
+}
+
+#pageTitle{
+    justify-content: center;
+    text-align: center;
+    font-size: 200%;
+}
+.classlist{
+  margin: 10px auto;
+  height: 500px;   /*限定高度*/
+  overflow-y: auto; /*自動產生 y 軸捲軸*/
+}
+
+/* form{
+  margin: 50px  ; 
+  height: 100%;
+  display: grid;
+  place-items: center;
+  text-align: left;
+  outline: 1px solid tomato;
+} */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+th:first-child {
+  width: 100px; /* 用於顯示時間欄位 */
+}
+
+tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+tr:nth-child(even) {
+  background-color: #fff;
+}
+
+button{
+  background: none;
+  border: none;
+  padding: 0;
+}
+
