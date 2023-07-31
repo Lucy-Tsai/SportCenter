@@ -114,7 +114,7 @@ footer{
     font-size: 400%;
 }
 
-#pageTitle{
+.pageTitle{
     justify-content: center;
     text-align: center;
     font-size: 200%;

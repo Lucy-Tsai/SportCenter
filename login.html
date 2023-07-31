@@ -13,30 +13,27 @@
         <header id="main">
             Sport Center
         </header>
-        <p id="pageTitle">會員登入</p>
-        <div id="AD">
-        <img id="img_AD" src="/image/main.png">
-            <div id="login">
-                <form id="form_login" action="{{ url_for('member') }}" method="post">
-                    <label style="font-size: x-large;">身分證字號(登入帳號)：<input type="numberid" name="numberid"  style="font-size: x-large;"></label>
-                    <br>
-                    <label>密碼：<input type="password" name="password" required></label>
-                    <br>
-                    <div class="button-container">
-                        <button type="submit">
-                        <img id="login_button" src="/image/login.png" alt="登入">
-                        </button>
-                        <button id="forgotpassword" >
-                            <img id="login_button" src="/image/forgotpassword.png" alt="忘記密碼">
-                        </a>
-                        </button>
-                        <button id="register">
-                            <img id="login_button" src="/image/register.png" alt="註冊會員">
-                        </a>    
-                        </button>
-                    </div>
-                </form>  
-            </div>
+        <p class="pageTitle">會員登入</p>
+        <div id="login">
+            <form id="form_login" action="{{ url_for('member') }}" method="post">
+                <label style="font-size: x-large;">身分證字號(登入帳號)：<input type="numberid" name="numberid" required style="font-size: x-large;"></label>
+                <br>
+                <label style="font-size: x-large;">密碼：<input type="password" name="password" required style="font-size: x-large;"></label>
+                <br>
+                <div class="button-container">
+                    <button type="submit">
+                    <img id="login_button" src="/image/login.png" alt="登入">
+                    </button>
+                    <button id="forgotpassword" >
+                        <img id="login_button" src="/image/forgotpassword.png" alt="忘記密碼">
+                    </a>
+                    </button>
+                    <button id="register">
+                        <img id="login_button" src="/image/register.png" alt="註冊會員">
+                    </a>    
+                    </button>
+                </div>
+            </form>  
         </div>
         <footer>
             <a href="index.html" ><span class="backToIndex">按我回首頁</span></a>
