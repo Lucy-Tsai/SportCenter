@@ -8,29 +8,34 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="login.css">
+        <link rel="Shortcut Icon" type="image/x-icon" href="絕對位址/相對位址" />
     </head>
     <body id="bg">
-        <header id="main">
+        <header class="main">
             Sport Center
         </header>
         <p class="pageTitle">會員登入</p>
         <div id="login">
             <form id="form_login" action="{{ url_for('member') }}" method="post">
-                <label style="font-size: x-large;">身分證字號(登入帳號)：<input type="numberid" name="numberid" required style="font-size: x-large;"></label>
-                <br>
-                <label style="font-size: x-large;">密碼：<input type="password" name="password" required style="font-size: x-large;"></label>
-                <br>
+                <table class="table_login">
+                    <tr>
+                        <th>身分證字號(登入帳號)</th>
+                        <td><input type="numberid" name="numberid" required></td>
+                    </tr>
+                    <tr>
+                        <th>密碼</th>
+                        <td><input type="password" name="password" required></td>
+                    </tr>
+                </table>
                 <div class="button-container">
-                    <button type="submit">
-                    <img id="login_button" src="/image/login.png" alt="登入">
+                    <button class="btn-1" type="submit" value="登入">
+                        <span>登入</span>
                     </button>
-                    <button id="forgotpassword" >
-                        <img id="login_button" src="/image/forgotpassword.png" alt="忘記密碼">
-                    </a>
+                    <button id="forgotpassword" class="btn-1" type="submit" value="忘記密碼">
+                        <span>忘記密碼</span>
                     </button>
-                    <button id="register">
-                        <img id="login_button" src="/image/register.png" alt="註冊會員">
-                    </a>    
+                    <button id="register" class="btn-1" type="submit" value="註冊會員">
+                        <span>註冊會員</span>
                     </button>
                 </div>
             </form>  

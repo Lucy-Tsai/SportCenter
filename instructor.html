@@ -10,17 +10,17 @@
         <link rel="Shortcut Icon" type="image/x-icon" href="絕對位址/相對位址" />
     </head>
     <body id="bg">
-        <header id="main">
+        <header class="main">
             Sport Center
         </header>
-        <p id="pageTitle">教練介紹</p>
+        <p class="pageTitle">教練介紹</p>
             <nav>
-                <ul>
-                    <li><a href="login.html" target="_blank" class="tabwindow"><span class="label">會員中心</span></a></li>
-                    <li><a href="course.html" target="_blank" class="tabwindow"><span class="label">課程介紹&報名</span></a></li>
-                    <li><a href="instructor.html" target="_blank" class="tabwindow"><span class="label">教練介紹</span></a></li>
-                    <li><a href="reservation.html" target="_blank" class="tabwindow"><span class="label">場地預約</span></a></li>
-                    <li><a href="staff.html" target="_blank" class="tabwindow"><span class="label">教練專區</span></a></li>
+                <ul id="coachList">
+                    <!-- <li><a href="#" target="_blank" class="tabwindow"><span class="label">教練名稱</span></a></li>
+                    <li><a href="#" target="_blank" class="tabwindow"><span class="label">教練名稱</span></a></li>
+                    <li><a href="#" target="_blank" class="tabwindow"><span class="label">教練名稱</span></a></li>
+                    <li><a href="#" target="_blank" class="tabwindow"><span class="label">教練名稱</span></a></li>
+                    <li><a href="#" target="_blank" class="tabwindow"><span class="label">教練名稱</span></a></li> -->
                 </ul>
             </nav>
         <footer>
@@ -29,5 +29,48 @@
         </footer>
         <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
         <script src="main.js" ></script>
+        <script>
+            // Script section for the dynamic coach list
+            $(document).ready(function () {
+                const coaches = [
+                    {
+                        name: "陳建和",
+                        expertise: "瑜珈",
+                        courses: "舒緩瑜珈",
+                        imgUrl: "URL_OF_COACH_1_IMAGE",
+                    },
+                    {
+                        name: "王一珊",
+                        expertise: "教練2的專長",
+                        courses: "教練2的課程",
+                        imgUrl: "URL_OF_COACH_2_IMAGE",
+                    },
+                    // Add more coaches as needed
+                ];
+    
+                // Generate coach list dynamically
+                const coachList = $("#coachList");
+                coaches.forEach((coach, index) => {
+                    coachList.append(
+                        `<li><a href="#" class="coachLink" data-index="${index}"><span class="label">${coach.name}</span></a></li>`
+                    );
+                });
+    
+                // Dialog box for showing coach details
+                $(".coachLink").on(function (event) {
+                    event.preventDefault();
+                    const index = $(this).data("index");
+                    const coach = coaches[index];
+                    const dialogContent = `
+                        <p><strong>教練專長:</strong> ${coach.expertise}</p>
+                        <p><strong>教練課程:</strong> ${coach.courses}</p>
+                        <a href="course.html" target="_blank" class="tabwindow">報名課程</a>
+                    `;
+                    $("#dialog").html(dialogContent).dialog({
+                        title: coach.name,
+                    });
+                });
+            });
+        </script>
     </body>
 </html>
