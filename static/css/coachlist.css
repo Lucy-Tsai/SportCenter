@@ -1,0 +1,62 @@
+html{
+    overflow: auto;
+}
+/* 錨點選項的樣式 */
+.coachListPoint{
+    display: inline;
+    margin: 20px auto;
+    font-size: 30px;
+    
+}
+.anchor{
+    padding: 9px;
+    color: rgb(248, 174, 0);
+    margin: 20px 30px 0px 30px;
+    font-size: 30px;
+    background-color: rgba(249, 249, 247, 0.598);
+    font-weight: bold;
+ }
+
+ /* 各個選項的樣式 */
+.coachlist{
+    margin: 10px auto;
+    background-color: rgba(249, 249, 247, 0.598);
+    color: red;
+    padding: 9px;
+    font-size: 25px;
+}
+
+/* 一列教練的分布 */
+.coachDiv{
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+
+.coachIntroduce{ /*分配每個教練的寬*/
+    width: 200px;
+    height: 400px;
+    margin: 0 20px;
+}
+
+.coachImage{
+    width: min-content 250px;
+    height: 300px;
+    overflow:hidden;
+    /* border: 1px solid tomato; */
+}
+
+.coachName{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.coachSpecial{
+    font-size: 20px;
+}
+
+a{
+    letter-spacing: 0.4em;
+    font-size: 20px;
+    margin: 10px;
+}
