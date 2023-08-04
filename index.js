@@ -41,3 +41,17 @@ $(document).ready(function() {
       if (parts.length === 2) return parts.pop().split(";").shift();
     }
   });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const txtContentElement = document.getElementById('news');
+    const txtFilePath = 'news.txt'; // 替换为你的 .txt 文件名
+
+    fetch(txtFilePath)
+        .then(response => response.text())
+        .then(text => {
+            txtContentElement.innerText = text;
+        })
+        .catch(error => {
+            txtContentElement.innerText = '无法读取文件内容：' + error.message;
+        });
+});

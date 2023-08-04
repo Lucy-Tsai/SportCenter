@@ -1,3 +1,7 @@
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+
 html,h1,h2,h3,h4,a,p,body,header,nav,div,ul,li,form,img{
     overflow-x: hidden;
     overflow-y: auto;
@@ -5,30 +9,35 @@ html,h1,h2,h3,h4,a,p,body,header,nav,div,ul,li,form,img{
     margin: 0 auto; 
     color: #333333;
     max-width: 1200px;
-    text-align: center
+    text-align: center;
+    font-family: 'cwTeXYen','Kanit',sans-serif;
 
     /* outline: 2px solid tomato; */
 }
-#bg{
+a{
+  text-decoration:none
+}
+
+#profile_agree{
+  text-decoration-line: underline;
+}
+
+/* #bg{
   background: #70cbf3 ;
 	height: 100%;
   background-size: 1200px auto;
-}
-#news{
-    padding-top: 2%;
+} */
+#index_news{
+    display: inline;
     height: 50px;
+    padding-top: 1%;
     color: #666666;
-    -webkit-animation: run 30s linear infinite;
-	animation: run 30s linear infinite;
-}
-@keyframes run{
-    from{transform: translateX(100%)}
-	to{transform: translateX(0%)}
+    font-size: 20px;
 }
 
 #firstPage{
-    padding: 3% 0% 3% 0%;
-    color: rgb(255, 255, 255);
+    padding: 2% 0% 2% 0%;
+    color: rgb(255, 0, 0);
     justify-content: center;
     text-align: center;
     font-size: 500%;
@@ -41,23 +50,18 @@ ul {
     list-style: none;
     margin: 0;
     padding: 0;
+        
 }
 li{
     display: inline-block;
-    width: 100px;
-    height: 100px;
-    /*background-image:url('image/main.png');  Replace with your desired circle color */
-    background-size: auto;
-    background-position: center;
-    border-radius: 50%; /* Set border-radius to 50% to create a circle */
-    line-height: 100Px;
-    text-align: center;
-    font-size: 14px;
+    width: 150px;
+    height: 150px;
+    background-size: 100%;
+    /* background-position: center; */
+    /*border-radius: 50%;  Set border-radius to 50% to create a circle */
 }
 
-#logo{
-    margin: 20px auto;
-}
+
 #one{
 	height: 200px;
 	width: 1000px;
@@ -104,18 +108,16 @@ li{
   }
 
 footer{
-    width: 1200px;
-    background-color: #52d2f6;
-    margin: 50px auto 0 auto;
+    width:100%;
+    background-color: #f65252;
+    margin: 30px auto 0 auto;
 }
 
 #footer_firstPage{
-  position: absolute;
-  bottom: 0;
-  width: 1200px;
-  background-color: #52d2f6;
-  margin: 50px auto 0 auto;
+  background-color: #f65252;
+  margin: 220px auto 0 auto;
 }
+
 
 
 /* 其他頁面的頁首 */

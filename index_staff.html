@@ -7,18 +7,19 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" >
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="style.css">
-        <link rel="Shortcut Icon" type="image/x-icon" href="絕對位址/相對位址" />
+        <link rel="Shortcut Icon" type="image/x-icon" href="image/title.ico" />
     </head>
     <body id="bg">
         <header class="main">
             Sport Center
         </header>
-        <p class="pageTitle">場館人員中心</p>
+        <p class="pageTitle">工作人員: {{ user['name'] }}，您好!</p>
             <nav>
                 <ul>
                     <li><a href="profile.html" class="tabwindow"><span class="label">會員資料</span></a></li>
-                    <li><a href="edit_class.html" class="tabwindow"><span class="label">課程更新</span></a></li>
+                    <li><a href="{{ url_for('add_course') }}" class="tabwindow"><span class="label">新增課程</span></a></li>
                     <li><a href="course.html" class="tabwindow"><span class="label">課程查詢</span></a></li>
+                    <li><a href="{{ url_for('coach_check_in') }}" class="tabwindow"><span class="label">教練點名</span></a></li>
                 </ul>
             </nav>
         <footer>

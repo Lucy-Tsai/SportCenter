@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="login.css">
-        <link rel="Shortcut Icon" type="image/x-icon" href="絕對位址/相對位址" />
+        <link rel="Shortcut Icon" type="image/x-icon" href="image/title.ico" />
     </head>
     <body id="bg">
         <header class="main">
@@ -16,7 +16,7 @@
         </header>
         <p class="pageTitle">場館人員登入</p>
         <div id="login">
-            <form action="{{ url_for('member') }}" method="post">
+            <form action="{{ url_for('login') }}" method="post">
                 <table>
                     <tr>
                         <th>身分證字號：(登入帳號)</th>
