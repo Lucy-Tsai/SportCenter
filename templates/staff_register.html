@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>會員註冊</title>
+        <title>員工註冊</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" >
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="../static/css/style.css">
@@ -16,7 +16,7 @@
     <header class="main">
         <a href="../templates/index.html"> <img src="../static/image/LOGO_rec_white.png" width="250px" title="點我回首頁"> </a>
     </header>
-    <p class="pageTitle">會員註冊</p>
+    <p class="pageTitle">員工註冊</p>
     <main>
         <form id="form_register" action="{{ url_for('register') }}" method="post">
             <table>
@@ -50,22 +50,13 @@
                 <tr>
                     <th>連絡電話</th> <td><input type="tel" name="phone" required></td>
                 </tr>
-                <tr>
-                    <td colspan="2"><input type="radio" required>我已閱讀個人資料使用<span class="show_modal">同意書</span>且同意</td>
-                </tr>
             </table>
                 <div class="button-container">
                     <button class="btn-7" type="submit" value="註冊會員">
                     <span>註冊會員</span>
                     </button>
-                </div>   
-        <div class="modal_wrapper">
-            <div class="agree_modal">
-                <iframe class="agree_iframe" src="/templates/profile_agree.html"></iframe>
-                <div class="btn_register"><button id="agree_btn">同意</button><button id="cancel_btn">取消</button></div>
-            </div>
-        </div>
-        
+                </div>
+        </form>   
     </main>
     <footer>
         <h4>地址:台北市中正區忠孝東路一段123號  電話:(02)2345-1343 營業時間:6:00-22:00</h4>   
@@ -104,22 +95,6 @@
                 console.error('Error:', error);
             });
         }
-        $(function() {
-            $("#agree_btn").on("click", function(e) {
-                e.preventDefault();
-                //讓視窗按下我同意後消失
-                $(".modal_wrapper").css("display", "none");
-            });
-        });
-        $(function() {
-            $("#cancel_btn").on("click", function(e) {
-                e.preventDefault();
-                //讓視窗按下取消後返回首頁
-                window.location.href="index.html";
-            });
-        });
-
-        
     </script>
 </body>
 </html>

@@ -1,0 +1,20 @@
+.course_detail_table{
+    height: 800px;
+  }
+
+.course_detail_form{
+    height: 150px;
+    margin: 10px auto;
+}
+
+.table_caption1{
+    font-size: 150%;
+    margin: 0px auto 10px auto;
+    color: rgb(253,94,50);
+    font-weight: bold;
+}
+
+.table_caption2{
+    font-size: 150%;
+    margin: 0px auto 10px auto;
+}

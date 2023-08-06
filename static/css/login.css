@@ -73,13 +73,10 @@
 .btn-1:hover:before {
   --progress: 0%;
 }
-.table_login{
-  margin-top:  20px; ;
-}
 
 .button-container {
     display: flex; /* Use flexbox to align items in a row */
     justify-content: center;
     gap: 20px; /* Add some space between buttons (optional) */
-    margin-top: 20px;
+    margin: 20px auto;
 }

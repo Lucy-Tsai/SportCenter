@@ -1,11 +1,59 @@
 @import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 自己寫不完整的reset */
 html,h1,h2,h3,h4,a,p,body,header,nav,div,ul,li,form,img{
     overflow: hidden;
     overflow-y: auto;
-    padding: 0;
     margin: 0 auto; 
     color: #333333;
     max-width: 1200px;
@@ -19,12 +67,9 @@ html,h1,h2,h3,h4,a,p,body,header,nav,div,ul,li,form,img{
   padding-bottom: 20px;
 } */
 
+/* 讓超連結沒有底線跟顏色 */
 a{
   text-decoration:none
-}
-
-#profile_agree{
-  text-decoration-line: underline;
 }
 
 #bg{
@@ -32,10 +77,22 @@ a{
   background-image: url('../image/banner.png');
   background-attachment: fixed;
   background-position: center;
-  /* width: 100%;
-	height: 100%; */
-  /* background-size: 1200px auto; */
-  /* margin: 0 auto; */
+  width: 100%;
+  background-size: cover;
+  /* 上面這行設定背景圖片左右填滿 */
+}
+
+#bg_index{
+  background-repeat: no-repeat;
+  background-image: url('../image/banner_02.png');
+  background-attachment: fixed;
+  background-position: center;
+  width: 100%;
+  background-size: cover;
+}
+
+#wrapper_index{
+  margin: 10% auto;
 }
 
 #index_news{
@@ -57,73 +114,25 @@ nav{
     display: flex;
     justify-content: center;
 }
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-        
-}
+
 li{
     display: inline-block;
     width: 150px;
     height: 150px;
     background-size: 100%;
-    /* background-position: center; */
-    /*border-radius: 50%;  Set border-radius to 50% to create a circle */
 }
 
-
-#one{
-	height: 200px;
-	width: 1000px;
-	position: fixed;
-	-webkit-animation: scrol1 30s linear infinite;
-	animation: scrol1 30s linear infinite;
+/* 設定頁面內容太多時跟footer有間隔*/
+#wrapper {
+  min-height: 100%;
+  position: relative;
 }
-#two{
-	height: 200px;
-	width: 1000px;
-	position: fixed;
-	-webkit-animation: scrol2 30s linear infinite;
-	animation: scrol2 30s linear infinite;
-}
-#three{
-	height: 200px;
-	width: 1000px;
-	position: fixed;
-	-webkit-animation: scroll3 30s linear infinite;
-	animation: scroll3 30s linear infinite;
-}
-#four{
-	height: 200px;
-	width: 1000px;
-	position: fixed;
-	-webkit-animation: scroll4 30s linear infinite;
-	animation: scroll4 30s linear infinite;
-}
-@keyframes scrol1{
-	from{transform: translateX(100%)}
-	to{transform: translateX(-100%)}
-  }
-@keyframes scrol2{
-	from{transform: translateX(0%)}
-	to{transform: translateX(-200%)}
-  }
-@keyframes scroll3{
-	from{transform: translateX(-100%)}
-	to{transform: translateX(-300%)}
-  }
-@keyframes scroll4{
-	from{transform: translateX(200%)}
-	to{transform: translateX(0%)}
-  }
 
 footer{
-    position: absolute;
-    bottom: 0;
-    /* height: 20px; */
-    width: 100%;
-    margin: 0 auto;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 
@@ -136,22 +145,23 @@ footer{
     justify-content: center;
     text-align: center;
     font-size: 300%;
-    margin-top: 2%;
+    margin : 2% auto;
     font-weight:bolder
     
 }
 
-/* 課表的跟表格的設定 */
+/* 表格的設定 */
 .classlist{
-  margin: 10px auto;
+  margin: 0 auto 2% auto;
   height: 500px;   /*限定高度*/
-  overflow-y: auto; /*自動產生 y 軸捲軸*/
+  overflow: auto; /*自動產生捲軸*/
 }
+
 
 table {
   max-width: 100%;
   border-collapse: collapse;
-  margin: auto;
+  margin: 10px auto;
 }
 
 table, th, td {
@@ -172,11 +182,11 @@ th:first-child {
 }
 
 tr:nth-child(odd) {
-  background-color: #ffffff;
+  background-color: rgba(249, 249, 247, 0.386);
 }
 
 tr:nth-child(even) {
-  background-color: #f8eaea;
+  background-color: rgba(254, 187, 169, 0.386);
 }
 
 /* button 的效果 */
@@ -256,17 +266,24 @@ tr:nth-child(even) {
   --progress: 0%;
 }
 
+/* .button-container {
+  display: flex; Use flexbox to align items in a row
+  justify-content: center;
+  gap: 20px; Add some space between buttons (optional)
+  margin-top: 20px;
+} */
+
 .button-container {
   display: flex; /* Use flexbox to align items in a row */
   justify-content: center;
   gap: 20px; /* Add some space between buttons (optional) */
-  margin-top: 20px;
+  margin: 20px auto;
 }
 
 /* 輸入值的框框 */
 input{
-  border: transparent;
-  background-color: transparent;
+  /* background-color: transparent; */
+  border: #000;
   font-size: medium;
 }
 
@@ -274,5 +291,54 @@ input{
 .profile_agree{
   text-align: start;
   margin: auto 10px;
-  background-color: rgba(249, 249, 247, 0.598);
+  color: #000;
+  background-color: rgba(249, 249, 247, 0.386);
+}
+
+.agree_Title{
+  font-size: 150%;
+  color: #fe3702;
+}
+
+#txtContent{
+  font-size: medium;
+}
+
+#agree_btn{
+  margin: 5px 10px;
+}
+
+#cancel_btn{
+  margin: 5px 10px;
+}
+
+/* 同意書的彈窗 */
+.modal_wrapper{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* display: none; */
+}
+
+.agree_modal{
+  margin-top: 100px;
+  width: 60%;
+  height: 70%;
+  background-color: #666666;
+  overflow: hidden;
+  padding-bottom: 20px;
+  z-index: 10;
+  border: 4px solid black;
+}
+
+.agree_iframe {
+  border: 0;
+  overflow: auto;
+  height: 95%;
+  width: 100%;
 }
