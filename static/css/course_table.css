@@ -1,0 +1,74 @@
+.courseimg{
+    height: 50%;
+    margin-top: -5%;
+}
+.coachDiv{
+    overflow: auto;
+}
+
+.daylist{
+    text-align: center;
+    font-size: x-large;
+    font-weight: bolder;
+    color: rgb(253,94,50);
+    margin-bottom: -10px;
+}
+
+.weekselet{
+    margin-bottom: 1%;
+}
+
+/* ul */
+.weekselet_ul{
+    display: flex;
+}
+
+/* li */
+.weekselet_li{
+    height: 2%;
+    width: 10%;
+}
+
+.anchor{
+    color: #f4d437;
+    /* margin: 20px 30px 0px 30px; */
+    font-size: 30px;
+    background-color: rgba(249, 249, 247, 0.598);
+    font-weight: bold;
+ }
+
+
+ /* 56px */
+.toTop-arrow {
+	width: 3.5rem;
+	height: 3.5rem;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	border-radius: 33%;
+	opacity: 0.6;
+	background: #000;
+	cursor: pointer;
+	position:fixed;
+	right: 1rem;
+	bottom: 1rem;
+	display: none;
+}
+.toTop-arrow::before, .toTop-arrow::after {
+	width: 31px;
+	height: 7px;
+	border-radius: 3px;
+	background: #f4d437;
+	position: absolute;
+	content: "";
+}
+.toTop-arrow::before {
+	transform: rotate(-45deg) translate(0, -50%);
+	left: 0.4rem;
+}
+.toTop-arrow::after {
+	transform: rotate(45deg) translate(0, -50%);
+	right: 0.4rem;
+}
+.toTop-arrow:focus {outline: none;}
+

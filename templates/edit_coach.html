@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>編輯教練資料</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" >
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="Shortcut Icon" type="image/x-icon" href="../static/image/title.ico" />
+    </head>
+    <body id="bg">
+        <header class="main">
+            <a href="../templates/index.html"> <img src="../static/image/LOGO_rec_white.png" width="250px" title="點我回首頁"> </a>
+        </header>
+        <p class="pageTitle">編輯教練資料</p>
+        <div id="wrapper">
+        <form action="{{ url_for('edit_coach', coach_id=coach['coach_id']) }}" method="post">
+            <table style="width: 40%;">
+                <tr>
+                    <td><label for="name">姓名</label></td>
+                    <td><input type="text" name="name" value="{{ coach['name'] }}"></td>
+                </tr>
+                <tr>
+                    <td><label for="coach_name">教練綽號</label></td>
+                    <td><input type="text" name="coach_name" value="{{ coach['coach_name'] }}" required></td>
+                </tr>
+                <tr>
+                    <td><label for="gender">性別</label></td>
+                    <td><select name="gender" required>
+                        <option value="男" {% if coach['gender'] == '男' %}selected{% endif %}>男</option>
+                        <option value="女" {% if coach['gender'] == '女' %}selected{% endif %}>女</option>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="birthday">生日</label></td>
+                    <td><input type="date" name="birthday" value="{{ coach['birthday'] }}" required></td>
+                </tr>
+                <tr>
+                    <td><label for="password">密碼</label></td>
+                    <td><input type="password" name="password" value="{{ coach['password'] }}"></td>
+                </tr>
+                <tr>
+                    <td><label for="age">年齡</label></td>
+                    <td><input type="text" name="age" value="{{ coach['age'] }}" required></td>
+                </tr>
+                <tr>
+                    <td><label for="phone">電話</label></td>
+                    <td><input type="tel" name="phone" value="{{ coach['phone'] }}" required></td>
+                </tr>
+                <tr>
+                    <td><label for="email">電子郵件</label></td>
+                    <td><input type="email" name="email" value="{{ coach['email'] }}" required></td>
+                </tr>
+                <tr>
+                    <td><label for="bank">銀行</label></td>
+                    <td><input type="text" name="bank" value="{{ coach['bank'] }}" required></td>
+                </tr>
+                <tr>
+                    <td><label for="bank_account">銀行帳號</label></td>
+                    <td><input type="text" name="bank_account" value="{{ coach['bank_account'] }}" required></td>
+                </tr>
+            </table>
+                <div class="button-container">
+                    <button class="btn-7" type="submit" value="確定修改">
+                    <span>確定修改</span>
+                    </button>
+                </div>
+        </form>
+        <footer>
+            <h4>地址:台北市中正區忠孝東路一段123號  電話:(02)2345-1343 營業時間:6:00-22:00</h4>   
+        </footer>
+    </div>
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+        <script src="../static/js/main.js" ></script>
+    </body>
+</html>

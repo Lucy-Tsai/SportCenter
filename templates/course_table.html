@@ -33,9 +33,9 @@
         <th>已報名人數</th>
         <th>教練編號</th>
         <th>報名</th>
-    </tr>
+      </tr>
     {% for class_data in classes_data %}
-    <tr>
+      <tr>
         <td>{{ class_data[0] }}</td>
         <td>{{ class_data[1] }}</td>
         <td>{{ class_data[2] }}</td>
@@ -56,6 +56,131 @@
             </form>
         </td>
     </tr>
+    <tr>
+      <td>{{ class_data[0] }}</td>
+      <td>{{ class_data[1] }}</td>
+      <td>{{ class_data[2] }}</td>
+      <td>{{ class_data[3] }}</td>
+      <td>{{ class_data[4].strftime('%Y-%m-%d') }} - {{ class_data[5].strftime('%Y-%m-%d') }}</td>
+      <td>{{ class_data[6] }}</td>
+      <td>{{ class_data[7] }}</td>
+      <td>{{ class_data[8] }}</td>
+      <td>{{ class_data[9] }}</td>
+      <td>{{ class_data[10] }}</td>
+      <td>{{ class_data[11] }}</td>
+      <td>{{ class_data[12] }}</td>
+      <td>{{ class_data[13] }}</td>
+      <td>{{ class_data[14] }}</td>
+      <td>
+          <form action="{{ url_for('course_detail', class_id=class_data[0]) }}" method="post">
+              <button type="submit">報名</button>
+          </form>
+      </td>
+  </tr><tr>
+    <td>{{ class_data[0] }}</td>
+    <td>{{ class_data[1] }}</td>
+    <td>{{ class_data[2] }}</td>
+    <td>{{ class_data[3] }}</td>
+    <td>{{ class_data[4].strftime('%Y-%m-%d') }} - {{ class_data[5].strftime('%Y-%m-%d') }}</td>
+    <td>{{ class_data[6] }}</td>
+    <td>{{ class_data[7] }}</td>
+    <td>{{ class_data[8] }}</td>
+    <td>{{ class_data[9] }}</td>
+    <td>{{ class_data[10] }}</td>
+    <td>{{ class_data[11] }}</td>
+    <td>{{ class_data[12] }}</td>
+    <td>{{ class_data[13] }}</td>
+    <td>{{ class_data[14] }}</td>
+    <td>
+        <form action="{{ url_for('course_detail', class_id=class_data[0]) }}" method="post">
+            <button type="submit">報名</button>
+        </form>
+    </td>
+</tr>
+<tr>
+  <td>{{ class_data[0] }}</td>
+  <td>{{ class_data[1] }}</td>
+  <td>{{ class_data[2] }}</td>
+  <td>{{ class_data[3] }}</td>
+  <td>{{ class_data[4].strftime('%Y-%m-%d') }} - {{ class_data[5].strftime('%Y-%m-%d') }}</td>
+  <td>{{ class_data[6] }}</td>
+  <td>{{ class_data[7] }}</td>
+  <td>{{ class_data[8] }}</td>
+  <td>{{ class_data[9] }}</td>
+  <td>{{ class_data[10] }}</td>
+  <td>{{ class_data[11] }}</td>
+  <td>{{ class_data[12] }}</td>
+  <td>{{ class_data[13] }}</td>
+  <td>{{ class_data[14] }}</td>
+  <td>
+      <form action="{{ url_for('course_detail', class_id=class_data[0]) }}" method="post">
+          <button type="submit">報名</button>
+      </form>
+  </td>
+</tr>
+<tr>
+  <td>{{ class_data[0] }}</td>
+  <td>{{ class_data[1] }}</td>
+  <td>{{ class_data[2] }}</td>
+  <td>{{ class_data[3] }}</td>
+  <td>{{ class_data[4].strftime('%Y-%m-%d') }} - {{ class_data[5].strftime('%Y-%m-%d') }}</td>
+  <td>{{ class_data[6] }}</td>
+  <td>{{ class_data[7] }}</td>
+  <td>{{ class_data[8] }}</td>
+  <td>{{ class_data[9] }}</td>
+  <td>{{ class_data[10] }}</td>
+  <td>{{ class_data[11] }}</td>
+  <td>{{ class_data[12] }}</td>
+  <td>{{ class_data[13] }}</td>
+  <td>{{ class_data[14] }}</td>
+  <td>
+      <form action="{{ url_for('course_detail', class_id=class_data[0]) }}" method="post">
+          <button type="submit">報名</button>
+      </form>
+  </td>
+</tr>
+<tr>
+  <td>{{ class_data[0] }}</td>
+  <td>{{ class_data[1] }}</td>
+  <td>{{ class_data[2] }}</td>
+  <td>{{ class_data[3] }}</td>
+  <td>{{ class_data[4].strftime('%Y-%m-%d') }} - {{ class_data[5].strftime('%Y-%m-%d') }}</td>
+  <td>{{ class_data[6] }}</td>
+  <td>{{ class_data[7] }}</td>
+  <td>{{ class_data[8] }}</td>
+  <td>{{ class_data[9] }}</td>
+  <td>{{ class_data[10] }}</td>
+  <td>{{ class_data[11] }}</td>
+  <td>{{ class_data[12] }}</td>
+  <td>{{ class_data[13] }}</td>
+  <td>{{ class_data[14] }}</td>
+  <td>
+      <form action="{{ url_for('course_detail', class_id=class_data[0]) }}" method="post">
+          <button type="submit">報名</button>
+      </form>
+  </td>
+</tr>
+<tr>
+  <td>{{ class_data[0] }}</td>
+  <td>{{ class_data[1] }}</td>
+  <td>{{ class_data[2] }}</td>
+  <td>{{ class_data[3] }}</td>
+  <td>{{ class_data[4].strftime('%Y-%m-%d') }} - {{ class_data[5].strftime('%Y-%m-%d') }}</td>
+  <td>{{ class_data[6] }}</td>
+  <td>{{ class_data[7] }}</td>
+  <td>{{ class_data[8] }}</td>
+  <td>{{ class_data[9] }}</td>
+  <td>{{ class_data[10] }}</td>
+  <td>{{ class_data[11] }}</td>
+  <td>{{ class_data[12] }}</td>
+  <td>{{ class_data[13] }}</td>
+  <td>{{ class_data[14] }}</td>
+  <td>
+      <form action="{{ url_for('course_detail', class_id=class_data[0]) }}" method="post">
+          <button type="submit">報名</button>
+      </form>
+  </td>
+</tr>
     {% endfor %}
     </table>
     </div>

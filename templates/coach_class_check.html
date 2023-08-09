@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>教練簽到</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" >
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="Shortcut Icon" type="image/x-icon" href="../static/image/title.ico" />
+    </head>
+    <body id="bg">
+        <header class="main">
+            <a href="../templates/index.html"> <img src="../static/image/LOGO_rec_white.png" width="250px" title="點我回首頁"> </a>
+        </header>
+        <p class="pageTitle">教練簽到</p>
+            <form action="{{ url_for('coach_class_check') }}" method="post">
+                <table>
+                    <caption style="font-size: large">請先完成「點名」再進行簽到</caption>
+                    <tr>
+                        <td><label for="class_id">課程編號</label></td>
+                        <td><input type="text" name="class_id" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="num_of_attendees">今日上課學員人數</label></td>
+                        <td><input type="text" name="num_of_attendees" required>人</td>
+                    </tr>
+                    <tr>
+                        <td><label for="check_in_date">今天日期</label></td>
+                        <td><input type="date" name="check_in_date" required></td>
+                    </tr>
+                </table>
+                    <div class="button-container">
+                        <button class="btn-7" type="submit" value="簽到">
+                            <span>簽到</span>
+                        </button>
+                    </div>
+            </form>
+        <footer>
+            <h4>地址:台北市中正區忠孝東路一段123號  電話:(02)2345-1343 營業時間:6:00-22:00</h4>   
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+        <script src="../static/js/main.js" ></script>
+    </body>
+</html>

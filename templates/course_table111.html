@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>課程介紹&報名</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/course_table.css">
+        <link rel="Shortcut Icon" type="image/x-icon" href="../static/image/title.ico" />
+  </head>
+  <body id="bg">
+      <header class="main">
+        <a href="../templates/index.html"> <img src="../static/image/LOGO_rec_white.png" width="250px" title="點我回首頁"> </a>
+      </header>
+      <p class="pageTitle">課程介紹&報名</p>
+  <div id="wrapper">
+    <div class="courseimg">
+      <img src="../static/image/classTimetable.png">
+    </div>
+    <div class="weekselet">
+      <ul class="weekselet_ul">
+        <li class="weekselet_li"><a href="#monday" class="anchor">星期一</a></li>
+        <li class="weekselet_li"><a href="#tuesday" class="anchor">星期二</a></li>
+        <li class="weekselet_li"><a href="#wednesday" class="anchor">星期三</a></li>
+        <li class="weekselet_li"><a href="#thursday" class="anchor">星期四</a></li>
+        <li class="weekselet_li"><a href="#friday" class="anchor">星期五</a></li>
+        <li class="weekselet_li"><a href="#saturday" class="anchor">星期六</a></li>
+        <li class="weekselet_li"><a href="#sunday" class="anchor">星期日</a></li>
+      </ul>
+    </div>
+    <div id="monday">
+      <p class="daylist">星期一</p>
+      <div class="coursediv">
+        <table id="coursetable">
+          <tr>
+            <th>課程ID</th>
+            <th>類別</th>
+            <th>課程編號</th>
+            <th>課程名稱</th>
+            <th>課程期間</th>
+            <th>期別</th>
+            <th>次數</th>
+            <th>課程時間</th>
+            <th>價格</th>
+            <th>名額</th>
+            <th>已報名人數</th>
+            <th>教練</th>
+            <th>報名</th>
+          </tr>
+        {% for class_data in classes_data %}
+            {% if class_data[6] == "一" %}
+            <tr>
+              <td>{{ class_data[0] }}</td>
+              <td>{{ class_data[1] }}</td>
+              <td>{{ class_data[2] }}</td>
+              <td>{{ class_data[3] }}</td>
+              <td>{{ class_data[4].strftime('%Y-%m-%d') }} - {{ class_data[5].strftime('%Y-%m-%d') }}</td>
+              <td>{{ class_data[7] }}</td>
+              <td>{{ class_data[8] }}</td>
+              <td>{{ class_data[9] }} - {{ class_data[10] }}</td>
+              <td>{{ class_data[11] }}</td>
+              <td>{{ class_data[12] }}</td>
+              <td>{{ class_data[13] }}</td>
+              <td>{{ class_data[15] }}</td>
+              <td>
+                  <form action="{{ url_for('course_detail', class_id=class_data[0]) }}" method="post">
+                      <button type="submit">報名</button>
+                  </form>
+              </td>   
+            </tr>
+            {% endif %}
+        </table>
+      </div>
+    </div>
+
+    <div id="tuesday">
+      <p class="daylist">星期二</p>
+      <div class="coursediv">
+        <table id="coursetable">
+          <tr>
+            <th>課程ID</th>
+            <th>類別</th>
+            <th>課程編號</th>
+            <th>課程名稱</th>
+            <th>課程期間</th>
+            <th>期別</th>
+            <th>次數</th>
+            <th>課程時間</th>
+            <th>價格</th>
+            <th>名額</th>
+            <th>已報名人數</th>
+            <th>教練</th>
+            <th>報名</th>
+          </tr>
+        {% for class_data in classes_data %}
+            {% if class_data[6] == "二" %}
+            <tr>
+              <td>{{ class_data[0] }}</td>
+              <td>{{ class_data[1] }}</td>
+              <td>{{ class_data[2] }}</td>
+              <td>{{ class_data[3] }}</td>
+              <td>{{ class_data[4].strftime('%Y-%m-%d') }} - {{ class_data[5].strftime('%Y-%m-%d') }}</td>
+              <td>{{ class_data[7] }}</td>
+              <td>{{ class_data[8] }}</td>
+              <td>{{ class_data[9] }} - {{ class_data[10] }}</td>
+              <td>{{ class_data[11] }}</td>
+              <td>{{ class_data[12] }}</td>
+              <td>{{ class_data[13] }}</td>
+              <td>{{ class_data[15] }}</td>
+              <td>
+                  <form action="{{ url_for('course_detail', class_id=class_data[0]) }}" method="post">
+                      <button type="submit">報名</button>
+                  </form>
+              </td>   
+            </tr>
+            {% endif %}
+        </table>
+      </div>
+    </div>
+
+    <div id="wednesday">
+      <p class="daylist">星期三</p>
+      <div class="coursediv">
+        <table id="coursetable">
+          <tr>
+            <th>課程ID</th>
+            <th>類別</th>
+            <th>課程編號</th>
+            <th>課程名稱</th>
+            <th>課程期間</th>
+            <th>期別</th>
+            <th>次數</th>
+            <th>課程時間</th>
+            <th>價格</th>
+            <th>名額</th>
+            <th>已報名人數</th>
+            <th>教練</th>
+            <th>報名</th>
+          </tr>
+        {% for class_data in classes_data %}
+            {% if class_data[6] == "三" %}
+          <tr>
+            <td>{{ class_data[0] }}</td>
+            <td>{{ class_data[1] }}</td>
+            <td>{{ class_data[2] }}</td>
+            <td>{{ class_data[3] }}</td>
+            <td>{{ class_data[4].strftime('%Y-%m-%d') }} - {{ class_data[5].strftime('%Y-%m-%d') }}</td>
+            <td>{{ class_data[7] }}</td>
+            <td>{{ class_data[8] }}</td>
+            <td>{{ class_data[9] }} - {{ class_data[10] }}</td>
+            <td>{{ class_data[11] }}</td>
+            <td>{{ class_data[12] }}</td>
+            <td>{{ class_data[13] }}</td>
+            <td>{{ class_data[15] }}</td>
+            <td>
+                <form action="{{ url_for('course_detail', class_id=class_data[0]) }}" method="post">
+                    <button type="submit">報名</button>
+                </form>
+            </td>   
+          </tr>
+            {% endif %}
+        </table>
+      </div>
+    </div>
+
+    <div id="thursday">
+      <p class="daylist">星期四</p>
+      <div class="coursediv">
+        <table id="coursetable">
+          <tr>
+            <th>課程ID</th>
+            <th>類別</th>
+            <th>課程編號</th>
+            <th>課程名稱</th>
+            <th>課程期間</th>
+            <th>期別</th>
+            <th>次數</th>
+            <th>課程時間</th>
+            <th>價格</th>
+            <th>名額</th>
+            <th>已報名人數</th>
+            <th>教練</th>
+            <th>報名</th>
+          </tr>
+        {% for class_data in classes_data %}
+            {% if class_data[6] == "四" %}
+          <tr>
+            <td>{{ class_data[0] }}</td>
+            <td>{{ class_data[1] }}</td>
+            <td>{{ class_data[2] }}</td>
+            <td>{{ class_data[3] }}</td>
+            <td>{{ class_data[4].strftime('%Y-%m-%d') }} - {{ class_data[5].strftime('%Y-%m-%d') }}</td>
+            <td>{{ class_data[7] }}</td>
+            <td>{{ class_data[8] }}</td>
+            <td>{{ class_data[9] }} - {{ class_data[10] }}</td>
+            <td>{{ class_data[11] }}</td>
+            <td>{{ class_data[12] }}</td>
+            <td>{{ class_data[13] }}</td>
+            <td>{{ class_data[15] }}</td>
+            <td>
+                <form action="{{ url_for('course_detail', class_id=class_data[0]) }}" method="post">
+                    <button type="submit">報名</button>
+                </form>
+            </td>   
+          </tr>
+            {% endif %}
+        </table>
+      </div>
+    </div>
+
+    <div id="friday">
+      <p class="daylist">星期五</p>
+      <div class="coursediv">
+        <table id="coursetable">
+          <tr>
+            <th>課程ID</th>
+            <th>類別</th>
+            <th>課程編號</th>
+            <th>課程名稱</th>
+            <th>課程期間</th>
+            <th>期別</th>
+            <th>次數</th>
+            <th>課程時間</th>
+            <th>價格</th>
+            <th>名額</th>
+            <th>已報名人數</th>
+            <th>教練</th>
+            <th>報名</th>
+          </tr>
+        {% for class_data in classes_data %}
+            {% if class_data[6] == "五" %}
+          <tr>
+            <td>{{ class_data[0] }}</td>
+            <td>{{ class_data[1] }}</td>
+            <td>{{ class_data[2] }}</td>
+            <td>{{ class_data[3] }}</td>
+            <td>{{ class_data[4].strftime('%Y-%m-%d') }} - {{ class_data[5].strftime('%Y-%m-%d') }}</td>
+            <td>{{ class_data[7] }}</td>
+            <td>{{ class_data[8] }}</td>
+            <td>{{ class_data[9] }} - {{ class_data[10] }}</td>
+            <td>{{ class_data[11] }}</td>
+            <td>{{ class_data[12] }}</td>
+            <td>{{ class_data[13] }}</td>
+            <td>{{ class_data[15] }}</td>
+            <td>
+                <form action="{{ url_for('course_detail', class_id=class_data[0]) }}" method="post">
+                    <button type="submit">報名</button>
+                </form>
+            </td>   
+          </tr>
+            {% endif %}
+        </table>
+      </div>
+    </div>
+
+    <div id="saturday">
+      <p class="daylist">星期六</p>
+      <div class="coursediv">
+        <table id="coursetable">
+          <tr>
+            <th>課程ID</th>
+            <th>類別</th>
+            <th>課程編號</th>
+            <th>課程名稱</th>
+            <th>課程期間</th>
+            <th>期別</th>
+            <th>次數</th>
+            <th>課程時間</th>
+            <th>價格</th>
+            <th>名額</th>
+            <th>已報名人數</th>
+            <th>教練</th>
+            <th>報名</th>
+          </tr>
+        {% for class_data in classes_data %}
+            {% if class_data[6] == "六" %}
+          <tr>
+            <td>{{ class_data[0] }}</td>
+            <td>{{ class_data[1] }}</td>
+            <td>{{ class_data[2] }}</td>
+            <td>{{ class_data[3] }}</td>
+            <td>{{ class_data[4].strftime('%Y-%m-%d') }} - {{ class_data[5].strftime('%Y-%m-%d') }}</td>
+            <td>{{ class_data[7] }}</td>
+            <td>{{ class_data[8] }}</td>
+            <td>{{ class_data[9] }} - {{ class_data[10] }}</td>
+            <td>{{ class_data[11] }}</td>
+            <td>{{ class_data[12] }}</td>
+            <td>{{ class_data[13] }}</td>
+            <td>{{ class_data[15] }}</td>
+            <td>
+                <form action="{{ url_for('course_detail', class_id=class_data[0]) }}" method="post">
+                    <button type="submit">報名</button>
+                </form>
+            </td>   
+          </tr>
+            {% endif %}
+        </table>
+      </div>
+    </div>
+
+    <div id="sunday">
+      <p class="daylist">星期日</p>
+      <div class="coursediv">
+        <table id="coursetable">
+          <tr>
+            <th>課程ID</th>
+            <th>類別</th>
+            <th>課程編號</th>
+            <th>課程名稱</th>
+            <th>課程期間</th>
+            <th>期別</th>
+            <th>次數</th>
+            <th>課程時間</th>
+            <th>價格</th>
+            <th>名額</th>
+            <th>已報名人數</th>
+            <th>教練</th>
+            <th>報名</th>
+          </tr>
+        {% for class_data in classes_data %}
+            {% if class_data[6] == "日" %}
+          <tr>
+            <td>{{ class_data[0] }}</td>
+            <td>{{ class_data[1] }}</td>
+            <td>{{ class_data[2] }}</td>
+            <td>{{ class_data[3] }}</td>
+            <td>{{ class_data[4].strftime('%Y-%m-%d') }} - {{ class_data[5].strftime('%Y-%m-%d') }}</td>
+            <td>{{ class_data[7] }}</td>
+            <td>{{ class_data[8] }}</td>
+            <td>{{ class_data[9] }} - {{ class_data[10] }}</td>
+            <td>{{ class_data[11] }}</td>
+            <td>{{ class_data[12] }}</td>
+            <td>{{ class_data[13] }}</td>
+            <td>{{ class_data[15] }}</td>
+            <td>
+                <form action="{{ url_for('course_detail', class_id=class_data[0]) }}" method="post">
+                    <button type="submit">報名</button>
+                </form>
+            </td>   
+          </tr>
+            {% endif %}
+        </table>
+      </div>
+    </div>
+
+    <footer>
+      <h4>地址:台北市中正區忠孝東路一段123號  電話:(02)2345-1343 營業時間:6:00-22:00</h4>   
+    </footer>
+  </div>
+    <button type="button" id="BackTop" class="toTop-arrow"></button>
+
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+        <script src="../static/js/main.js" ></script>
+        <!-- 設定會頂端的時間為0.333秒 -->
+        <!-- 當滾輪超過300PX時自動出現按鈕 -->
+        <script>
+            $(function(){
+            $('#BackTop').click(function(){ 
+                $('html,body').animate({scrollTop:0}, 333);
+            });
+            $(window).scroll(function() {
+                if ( $(this).scrollTop() > 300 ){
+                    $('#BackTop').fadeIn(222);
+                } else {
+                    $('#BackTop').stop().fadeOut(222);
+                }
+                }).scroll();
+            });
+            </script>
+  </body>
+</html>

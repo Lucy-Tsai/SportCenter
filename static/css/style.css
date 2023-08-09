@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,600&family=Kanit&display=swap');
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -72,6 +73,11 @@ a{
   text-decoration:none
 }
 
+.checkedbox{
+  text-align: center;
+  border: 1 solid black;
+}
+
 #bg{
   background-repeat: no-repeat;
   background-image: url('../image/banner.png');
@@ -98,21 +104,46 @@ a{
 #index_news{
     display: inline;
     height: 50px;
-    padding-top: 1%;
     color: #666666;
     font-size: 20px;
 }
 
-#firstPage{
-    padding: 2% 0% 2% 0%;
-    color: rgb(255, 0, 0);
-    justify-content: center;
-    text-align: center;
-    font-size: 500%;
+marquee{
+  padding-top: 1%;
 }
-nav{
+
+#index_select{
     display: flex;
     justify-content: center;
+}
+
+#corner{
+  position: fixed;
+  right: 0;
+  margin-top: 1%;
+}
+
+#corner_li{
+  width: 100px;
+}
+
+#staff{
+  font-size: larger;
+  background-color: #fe3702;
+  color: #ffffff;
+  padding: 1%;
+}
+
+marquee{
+  margin-top: 3%;
+}
+
+#slogan{
+  color: #fe3702;
+  font-family: 'Josefin Sans', 'sans-serif';
+  font-size: 300%;
+  margin: 3% auto 1% auto;
+  text-shadow: 2px 3px #666666c7; 
 }
 
 li{
@@ -147,7 +178,6 @@ footer{
     font-size: 300%;
     margin : 2% auto;
     font-weight:bolder
-    
 }
 
 /* 表格的設定 */
@@ -168,6 +198,10 @@ table, th, td {
   border: 1px solid #ffffff;
 }
 
+table{
+  margin-bottom: 2%;
+}
+
 th, td {
   padding: 8px;
   text-align: left;
@@ -175,10 +209,11 @@ th, td {
 
 th {
   background-color: #ffffff;
+  text-align: center;
 }
 
 th:first-child {
-  width: 100px; /* 用於顯示時間欄位 */
+  width: 100px;
 }
 
 tr:nth-child(odd) {
@@ -188,6 +223,7 @@ tr:nth-child(odd) {
 tr:nth-child(even) {
   background-color: rgba(254, 187, 169, 0.386);
 }
+
 
 /* button 的效果 */
 .btn-7,
@@ -341,4 +377,12 @@ input{
   overflow: auto;
   height: 95%;
   width: 100%;
+}
+
+/* check_in_class table_caption */
+.student_list{
+    font-size: 150%;
+    margin: 0px auto 5px auto;
+    color: rgb(253,94,50);
+    font-weight: bold;
 }

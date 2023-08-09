@@ -1,0 +1,61 @@
+.main_madal{
+    height: 800px;
+    overflow: hidden;
+}
+
+.top{
+    height: 50%;
+}
+
+.bottom{
+    height: 50%;
+    margin-top: 2%;
+}
+
+.about{
+    display: flex;
+}
+
+.about_title{
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bolder;
+    color: rgb(253,94,50);
+
+}
+
+.about_p1{
+    margin: auto 10%;
+    font-size: large;
+}
+
+.about_p2{
+    margin: auto 10%;
+    font-size: large;
+}
+
+p{
+    text-align: start;
+    background-color: rgba(249, 249, 247, 0.386);
+}
+
+.about_word{
+    position: absolute;
+    right: 50%;;
+    top: 10%;
+}
+
+.about_img{
+    position: absolute;
+    left: 45%;
+    top: 10%;
+}
+
+.origin_word{
+    position: absolute;
+    left: 50%;;
+}
+
+.origin_img{
+    position: absolute;
+}

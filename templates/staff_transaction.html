@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>訂單查詢</title>
+        <title>會員交易紀錄</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" >
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="../static/css/style.css">
@@ -13,7 +13,8 @@
         <header class="main">
             <a href="../templates/index.html"> <img src="../static/image/LOGO_rec_white.png" width="250px" title="點我回首頁"> </a>
         </header>
-        <p class="pageTitle">訂單查詢</p>
+        <p class="pageTitle">會員交易紀錄</p>
+        <div id="wrapper">
         <main>
             <table class="orderList">
                 <tr>
@@ -27,9 +28,9 @@
                     <th>退費狀態</th>
                     <th>退費金額</th>
                     <th>剩餘有效金額</th>
-                    <!-- 您可以根據您的資料表結構新增其他需要顯示的欄位 -->
+                    <th>退費操作</th>
                 </tr>    
-                {% for transaction in transaction_data %}
+                {% for transaction in transactions %}
                 <tr>
                     <td>{{ transaction[1] }}</td>
                     <td>{{ transaction[2] }}</td>
@@ -37,25 +38,28 @@
                     <td>{{ transaction[4] }}</td>
                     <td>{{ transaction[5] }}</td>
                     <td>{{ transaction[6] }}</td>
-                    <td>{{ transaction[7] }}</td>
+                    <td>{{ transaction[11] }}</td>
                     <td>{{ transaction[9] }}</td>
                     <td>{{ transaction[10] }}</td>
                     {% set remaining_amount = transaction[4] - transaction[10] %}
                     <td>{{ remaining_amount }}</td>
-                    <!-- 您可以根據您的資料表結構新增其他需要顯示的欄位 -->
+                    <td>
+                        <a href="{{ url_for('refund_transaction', transaction_id=transaction[0]) }}">退費</a>
+                    </td>        
                 </tr>
-                {% endfor %}       
+                {% endfor %}
             </table>
             <div class="button-container">
-                <button class="btn-7" type="submit" value="提交">
-                    <span><a href="{{ url_for('staff') }}">返回管理中心</a></span>
+                <button class="btn-7" type="submit" value="提交" id="Backtoindex_staff">
+                    <span>返回管理中心</span>
             </button>
             </div>
         </main>
         <footer>
             <h4>地址:台北市中正區忠孝東路一段123號  電話:(02)2345-1343 營業時間:6:00-22:00</h4>   
         </footer>
+    </div>
         <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-        <script src="../static/js/main.js" ></script>
+        <script src="../static/js/main.js"> </script>
     </body>
 </html>

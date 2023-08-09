@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>員工註冊</title>
+        <title>新增管理人員</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" >
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="../static/css/style.css">
@@ -16,7 +16,7 @@
     <header class="main">
         <a href="../templates/index.html"> <img src="../static/image/LOGO_rec_white.png" width="250px" title="點我回首頁"> </a>
     </header>
-    <p class="pageTitle">員工註冊</p>
+    <p class="pageTitle">新增管理人員</p>
     <main>
         <form id="form_register" action="{{ url_for('register') }}" method="post">
             <table>
@@ -27,7 +27,7 @@
                     <th>用戶名</th> <td><input type="text" name="username" id="username" required> <button type="button" onclick="checkUsername()">檢查用戶名</button></td>
                 </tr>
                 <tr>
-                    <th>身分證字號</th> <td><input type="numberid" name="numberid" required></td>
+                    <th>身分證字號<br>(登入帳號)</th> <td><input type="numberid" name="numberid" required></td>
                 </tr>
                 <tr>
                     <th>密碼</th> <td><input type="password" name="password" required></td>
