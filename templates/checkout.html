@@ -11,10 +11,10 @@
   </head>
   <body id="bg">
       <header class="main">
-        <a href="../templates/index.html"> <img src="../static/image/LOGO_rec_white.png" width="250px" title="點我回首頁"> </a>
+        <a href="{{ url_for('index') }}"> <img src="../static/image/LOGO_rec_white.png" width="250px" title="點我回首頁"> </a>
       </header>
       <p class="pageTitle">結帳完成</p>
-      <table>
+      <table style="margin-left:auto; margin-right:auto; ;width: 40%;" >
         <tr>
             <td>交易編號</td><td>{{ transaction_data[1] }}</td>
         </tr>
@@ -26,15 +26,11 @@
         </tr>
       </table>
       <div class="button-container">
-        <button class="btn-7" id="checkTransaction">
-            <span>查看交易歷史</span>
-        </button>
-        <button class="btn-7" id="Backtomember_index">
-            <span>返回會員首頁</span>
-        </button>
+          <a href="{{ url_for('transaction') }}" class="btn-7"> <span>查看交易紀錄</span></a>
+          <a href="{{ url_for('member_index') }}" class="btn-7"> <span>返回會員中心</span></a>
       </div>
       <footer>
-        <h4>地址:台北市中正區忠孝東路一段123號  電話:(02)2345-1343 營業時間:6:00-22:00</h4>   
+        <h4>Copyright © FN Sport. All Rights Reserved.</h4>   
       </footer>
       <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
       <script src="../static/js/main.js" ></script>

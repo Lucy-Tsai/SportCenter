@@ -11,12 +11,13 @@
     </head>
     <body id="bg">
         <header class="main">
-            <a href="../templates/index.html"> <img src="../static/image/LOGO_rec_white.png" width="250px" title="點我回首頁"> </a>
+            <a href="{{ url_for('index') }}"> <img src="../static/image/LOGO_rec_white.png" width="250px" title="點我回首頁"> </a>
         </header>
         <p class="pageTitle">會員交易紀錄</p>
         <div id="wrapper">
         <main>
             <table class="orderList">
+                <caption><input class="search" type="text" id="filterInput" placeholder="輸入關鍵字"></caption>
                 <tr>
                     <th>交易編號</th>
                     <th>課程ID</th>
@@ -29,34 +30,36 @@
                     <th>退費金額</th>
                     <th>剩餘有效金額</th>
                     <th>退費操作</th>
+                    <th>備註</th>
                 </tr>    
                 {% for transaction in transactions %}
-                <tr>
-                    <td>{{ transaction[1] }}</td>
-                    <td>{{ transaction[2] }}</td>
-                    <td>{{ transaction[3] }}</td>
-                    <td>{{ transaction[4] }}</td>
-                    <td>{{ transaction[5] }}</td>
-                    <td>{{ transaction[6] }}</td>
-                    <td>{{ transaction[11] }}</td>
-                    <td>{{ transaction[9] }}</td>
-                    <td>{{ transaction[10] }}</td>
+                <tr class="data-row">
+                    <td class="order">{{ transaction[1] }}</td>
+                    <td class="order">{{ transaction[2] }}</td>
+                    <td class="order">{{ transaction[3] }}</td>
+                    <td class="order">＄&nbsp&nbsp{{ transaction[4] }}&nbsp&nbsp元</td>
+                    <td class="order">{{ transaction[5] }}</td>
+                    <td class="order">{{ transaction[6] }}</td>
+                    <td class="order">{{ transaction[13] }}</td>
+                    <td class="order">{{ transaction[9] }}</td>
+                    <td class="order">{{ transaction[10] }}</td>
                     {% set remaining_amount = transaction[4] - transaction[10] %}
-                    <td>{{ remaining_amount }}</td>
-                    <td>
+                    <td class="order">{{ remaining_amount }}</td>
+                    <td class="order">
                         <a href="{{ url_for('refund_transaction', transaction_id=transaction[0]) }}">退費</a>
-                    </td>        
+                    </td>
+                    <td>{{ transaction[11] }}</td>       
                 </tr>
                 {% endfor %}
             </table>
             <div class="button-container">
-                <button class="btn-7" type="submit" value="提交" id="Backtoindex_staff">
-                    <span>返回管理中心</span>
-            </button>
+                <div class="button-container">
+                    <a href="{{ url_for('member_index') }}" class="btn-7"> <span>返回管理中心</span></a>
+                </div>
             </div>
         </main>
         <footer>
-            <h4>地址:台北市中正區忠孝東路一段123號  電話:(02)2345-1343 營業時間:6:00-22:00</h4>   
+            <h4>Copyright © FN Sport. All Rights Reserved.</h4>   
         </footer>
     </div>
         <script src="https://code.jquery.com/jquery-3.7.0.js"></script>

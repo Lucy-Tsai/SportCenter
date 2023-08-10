@@ -1,24 +1,26 @@
 // 會員登入轉到忘記密碼
-$("#forgotpassword").on("click", function() {
-    window.location.href = "forgotpassword.html";
+$("#forgotpassword").on("click", function(e) {
+    e.preventDefault();
+    window.location.href = "{{ url_for('forgotPassword') }}";
 });
 
 // 會員登入轉到註冊頁面
-$("#register").on("click", function() {
-    window.location.href = "register.html";
+$("#register").on("click", function(e) {
+    e.preventDefault();
+    window.location.href = "{{ url_for('register') }}";
 });
 
-// 我的訂單返回會員中心
 $(function(){
     $("#Backtomember_index").on("click",function(){
-        window.location.href="index_member.html";
-    })
-})
+        window.location.href = "{{ url_for('member_index') }}";
+    });
+});
+
 
 //返回交易歷史
 $(function(){
     $("#checkTransaction").on("click",function(){
-        window.location.href="transaction.html";
+        window.location.href="{{ url_for('transaction') }}";
     })
 }) 
 
@@ -38,15 +40,16 @@ $(function(){
 
 // 從退費頁面轉到交易紀錄
 $(function(){
-    $("#Backtostaff_transaction").on("click",function(){
-        window.location.href="staff_transaction.html";
+    $("#Backtostaff_transaction").on("click",function(e){
+        e.preventDefault();
+        window.location.href="{{ url_for('staff_transaction') }}";
     })
 })
 
 //會員資料轉到修改基本資料
 $(function(){
     $("#editProfile").on("click",function(){
-        window.location.href="edit_profile.html";
+        window.location.href="{{url_for('edit_profile')}}";
     })
 }) 
 
@@ -78,19 +81,17 @@ $(function(){
     $("#senttotal").on("click",function(){
         let checkedboxes = $('input:checkbox:checked').length;
         let checkedboxe = $('input:checkbox:not(":checked")').length;
-        alert("今日總上課人數："+ checkedboxes +"今日未到人數："+ checkedboxe);
+        alert("點名完成！\n今日總上課人數："+ checkedboxes +" \n今日未到人數："+ checkedboxe+ "\n請記得簽到！");
     })
 })
 
-$(function(){
-    $("#ckeckindone").on("click",function(){
-        window.location.href="index_coach.html";
 
-    })
-})
-
-// $(function(){
-//     $("#changeinput").on("click",function(){
-//         $("input[type='checkbox']").prop("checked",true);;
-//     })
-// })
+// 表格過濾關鍵字
+$(document).ready(function() {
+    $("#filterInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $(".data-row").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+});

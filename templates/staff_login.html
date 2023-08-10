@@ -6,13 +6,13 @@
         <title>員工登入</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" >
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="../static/css/login.css">
         <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="../static/css/login.css">
         <link rel="Shortcut Icon" type="image/x-icon" href="../static/image/title.ico" />
     </head>
     <body id="bg">
         <header class="main">
-            <a href="../templates/index.html"> <img src="../static/image/LOGO_rec_white.png" width="250px" title="點我回首頁"> </a>
+            <a href="{{ url_for('index') }}"> <img src="../static/image/LOGO_rec_white.png" width="250px" title="點我回首頁"> </a>
         </header>
         <p class="pageTitle">員工登入</p>
         <div id="login">
@@ -27,18 +27,18 @@
                         <td><input type="password" name="password" required></td>
                     </tr>
                 </table>
+                <div class="staff_under_table">
+                    <button class="under_table_btn" id="forgotpassword"> <p class="little_remind"> 忘記密碼？ </p> </button>
+                </div>        
                 <div class="button-container">
-                    <button class="btn-1" type="submit" value="登入">
+                    <button class="btn-7" type="submit" value="登入">
                         <span>登入</span>
-                    </button>
-                    <button id="forgotpassword" class="btn-1" type="submit" value="忘記密碼">
-                        <span>忘記密碼</span>
                     </button>
                 </div>
             </form>  
         </div>
         <footer>
-            <h4>地址:台北市中正區忠孝東路一段123號  電話:(02)2345-1343 營業時間:6:00-22:00</h4>   
+            <h4>Copyright © FN Sport. All Rights Reserved.</h4>   
         </footer>
         <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
         <script src="../static/js/main.js" ></script>

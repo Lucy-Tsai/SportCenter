@@ -164,6 +164,7 @@ footer{
   position: absolute;
   bottom: 0;
   width: 100%;
+  margin: 0 auto;
 }
 
 
@@ -206,15 +207,23 @@ th, td {
   padding: 8px;
   text-align: left;
 }
+ 
+td{
+  vertical-align: middle; /*表格內垂直置中*/
+}
+
+.order{
+  text-align: center;
+}
 
 th {
   background-color: #ffffff;
   text-align: center;
 }
 
-th:first-child {
+/* th:first-child {
   width: 100px;
-}
+} */
 
 tr:nth-child(odd) {
   background-color: rgba(249, 249, 247, 0.386);
@@ -224,6 +233,16 @@ tr:nth-child(even) {
   background-color: rgba(254, 187, 169, 0.386);
 }
 
+/* 教練資料管理的表格 */
+.add_coach{
+  text-align: right;
+}
+
+.add_coach_btn{
+  font-size: large;
+  background-color: rgba(249, 249, 247, 0.386);
+  border: transparent;
+}
 
 /* button 的效果 */
 .btn-7,
@@ -278,7 +297,7 @@ tr:nth-child(even) {
   mix-blend-mode: difference;
 }
 .btn-7:before {
-  background: #fff;
+  background: #ffffff;
   -webkit-clip-path: polygon(
     0 calc(var(--progress, 100%) / 2),
     100% calc(var(--progress, 100%) / 2),
@@ -302,13 +321,6 @@ tr:nth-child(even) {
   --progress: 0%;
 }
 
-/* .button-container {
-  display: flex; Use flexbox to align items in a row
-  justify-content: center;
-  gap: 20px; Add some space between buttons (optional)
-  margin-top: 20px;
-} */
-
 .button-container {
   display: flex; /* Use flexbox to align items in a row */
   justify-content: center;
@@ -316,11 +328,18 @@ tr:nth-child(even) {
   margin: 20px auto;
 }
 
+
+
+
 /* 輸入值的框框 */
 input{
   /* background-color: transparent; */
   border: #000;
   font-size: medium;
+}
+
+.search{
+  margin: 1%;
 }
 
 /* 會員資料同意書文字格式*/

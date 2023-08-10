@@ -11,7 +11,7 @@
     </head>
     <body id="bg_index">
         <header class="main">
-            <a href="../templates/index.html"> <img src="../static/image/LOGO_rec_white.png" width="250px" title="點我回首頁"> </a>
+            <a href="{{ url_for('index') }}"> <img src="../static/image/LOGO_rec_white.png" width="250px" title="點我回首頁"> </a>
         </header>
         <div id="wrapper">
         <p class="pageTitle">工作人員<br>{{ user['name'] }}，您好！</p>
@@ -19,18 +19,18 @@
                 <ul>
                     <li><a href="{{ url_for('staff_register')}}" class="tabwindow"><img src="../static/image/23.png" width="150px" height="140px" title="管理人員資料"></a></li>
                     <li><a href="{{ url_for('add_course') }}" class="tabwindow"><img src="../static/image/24.png" width="150px" height="140px" title="新增課程"></a></li>
-                    <li><a href="{{ url_for('member')}}" class="tabwindow"><img src="../static/image/25.png" width="150px" height="140px" title="會員資料管理"></a></li>
+                    <li><a href="{{ url_for('members')}}" class="tabwindow"><img src="../static/image/25.png" width="150px" height="140px" title="會員資料管理"></a></li>
                     <li><a href="{{ url_for('coaches') }}" class="tabwindow"><img src="../static/image/26.png" width="150px" height="140px" title="教練資料管理"></a></li>
                 </ul>
                 <ul>
                     <li><a href="{{ url_for('coach_class') }}" class="tabwindow"><img src="../static/image/27.png" width="150px" height="140px" title="教練簽到記錄"></a></li>
                     <li><a href="{{ url_for('staff_transaction') }}" class="tabwindow"><img src="../static/image/28.png" width="150px" height="140px" title="交易明細"></a></li>
-                    <li><a href="{{ url_for('coach_check_in') }}" class="tabwindow"><img src="../static/image/29.png" width="150px" height="140px" title="點名紀錄"></a></li>
+                    <li><a href="{{ url_for('view_all_check_ins') }}" class="tabwindow"><img src="../static/image/29.png" width="150px" height="140px" title="點名紀錄"></a></li>
                 </ul>
             </nav>
         </div>
             <footer>
-                <h4>地址:台北市中正區忠孝東路一段123號  電話:(02)2345-1343 營業時間:6:00-22:00</h4>   
+                <h4>Copyright © FN Sport. All Rights Reserved.</h4>   
             </footer>
         
             <script src="https://code.jquery.com/jquery-3.7.0.js"></script>

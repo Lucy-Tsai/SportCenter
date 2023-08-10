@@ -11,30 +11,35 @@
     </head>
     <body id="bg">
         <header class="main">
-            <a href="../templates/index.html"> <img src="../static/image/LOGO_rec_white.png" width="250px" title="點我回首頁"> </a>
+            <a href="{{ url_for('index') }}"> <img src="../static/image/LOGO_rec_white.png" width="250px" title="點我回首頁"> </a>
         </header>
         <p class="pageTitle">教練課表</p>
         <div id="wrapper">
-        <table style="width: 50%;">
+        <table style="width: 60%;">
+            <caption> 
+                <input class="search" type="text" id="filterInput" placeholder="輸入關鍵字"> 
+            </caption>
             <tr>
                 <th>課程ID</th>
+                <th>課程期別</th>
                 <th>課程名稱</th>
                 <th>開始日期</th>
                 <th>結束日期</th>
                 <th>執行點名動作</th>
             </tr>
             {% for course in courses %}
-            <tr>
-                <td>{{ course[7] }}</td>
-                <td>{{ course[1] }}</td>
-                <td>{{ course[4] }}</td>
-                <td>{{ course[5] }}</td>
-                <td><button><a href="{{ url_for('coach_check_in_class', class_id=course[0]) }}">點名</a></button></td>
+            <tr class="data-row">
+                <td class="order">{{ course[0] }}</td>
+                <td class="order">{{ course[7] }}</td>
+                <td class="order">{{ course[1] }}</td>
+                <td class="order">{{ course[4] }}</td>
+                <td class="order">{{ course[5] }}</td>
+                <td class="order"><button><a href="{{ url_for('coach_check_in_class', class_id=course[0]) }}">點名</a></button></td>
             </tr>
             {% endfor %}
         </table>
         <footer>
-            <h4>地址:台北市中正區忠孝東路一段123號  電話:(02)2345-1343 營業時間:6:00-22:00</h4>   
+            <h4>Copyright © FN Sport. All Rights Reserved.</h4>   
         </footer>
     </div>
         <script src="https://code.jquery.com/jquery-3.7.0.js"></script>

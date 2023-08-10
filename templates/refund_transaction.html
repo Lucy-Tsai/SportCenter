@@ -11,34 +11,48 @@
     </head>
     <body id="bg">
         <header class="main">
-            <a href="../templates/index.html"> <img src="../static/image/LOGO_rec_white.png" width="250px" title="點我回首頁"> </a>
+            <a href="{{ url_for('index') }}"> <img src="../static/image/LOGO_rec_white.png" width="250px" title="點我回首頁"> </a>
         </header>
         <p class="pageTitle">正在執行退費程序</p>
         <div id="wrapper">
             <div style="font-size: x-large; text-align:center">
-                姓名：{{ transaction[11] }}</br>
-                課程名稱：{{ transaction[2] }}</br>
-                課程期別：{{ transaction[3] }}</br>
-                課程班別：{{ transaction[1] }}</br>
-                交易編號：{{ transaction[0] }}</br>
-                交易金額：{{ class_info['time_end'] }}</br>
+                <h2>交易編號: {{ transaction[1] }}</h2>
+                <h2>學員姓名: {{ transaction[16] }}</h2>
+                <h2>課程期別: {{ transaction[14] }}</h2>
+                <h2>課程班別: {{ transaction[13] }}</h2>
+                <h2>課程名稱: {{ transaction[15] }}</h2>
+                <h2>交易時間: {{ transaction[3] }}</h2>
+                <h2>交易金額: {{ transaction[4] }}</h2>
+                {% set remaining_amount = transaction[4] - transaction[10] %}
+                <h2>剩餘有效金額: {{ remaining_amount }}</h2>
             </div>
-        <form method="POST">
-            <table>
-                <tr>
-                    <th><label for="refund_money">退費金額</label></th>
-                    <td><input type="text" name="refund_money" id="refund_money" required></td>
-                    <th><button><input type="submit" value="確定"></button></th>
-                </tr>
-            </table>
-        </form>
-            <div class="button-container">
-                <button class="btn-7" type="submit" value="返回交易紀錄" id="Backtostaff_transaction" >
-                <span>返回交易紀錄</span>
-                </button>
-            </div>
+            <form method="POST">
+                <table> 
+                    <tr>
+                        <td><label for="refund_money">退費金額：</label></td>
+                        <td><input type="text" name="refund_money" id="refund_money" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="refund_remark">退費備註：</label></td>
+                        <td><textarea name="refund_remark" id="refund_remark" rows="4" cols="25"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;"><input type="submit" value="確定" ></td>
+                    </tr>
+                </table>
+                
+                <div class="button-container">
+                    
+                        <!-- <button class="btn-7" type="submit" value="確定">
+                        <span>確定</span>
+                        </button> -->
+                    <button class="btn-7" type="submit" value="返回交易紀錄" id="Backtostaff_transaction" >
+                        <span>返回交易紀錄</span>
+                    </button>
+                </div>
+            </form>
         <footer>
-            <h4>地址:台北市中正區忠孝東路一段123號  電話:(02)2345-1343 營業時間:6:00-22:00</h4>   
+            <h4>Copyright © FN Sport. All Rights Reserved.</h4>   
         </footer>
 </div>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>

@@ -10,29 +10,31 @@
         <link rel="Shortcut Icon" type="image/x-icon" href="../static/image/title.ico" />
     </head>
     <body id="bg">
-    <div id="wrapper">
         <header class="main">
             <a href="{{ url_for('index') }}"> <img src="../static/image/LOGO_rec_white.png" width="250px" title="點我回首頁"> </a>
         </header>
         <p class="pageTitle">點名紀錄</p>
-        <table>
+        <div id="wrapper">
+            <div style="font-size: x-large; text-align:center">
+                <h2>課程點名紀錄 - {{ class_info['class_name'] }}</h2>
+                <h2>期別：{{ class_info['month'] }}</h2>
+        <table style="width: 80%;">
             <tr>
-                <th>課程名稱</th>
-                <th>期別</th>
-                <th>開始時間</th>
-                <th>結束時間</th>
-                <th>查看</th>
-            </tr>
-        {% for course in courses %}
+                <th>學員姓名</th>
+                <th>學員電話</th>
+                <th>點名日期</th>
+            </tr> 
+            {% for check_in in check_ins %}
             <tr>
-                <td>{{ course['class_name'] }}</td>
-                <td>{{ course['month'] }}</td>
-                <td>{{ course['time_start'] }}</td>
-                <td>{{ course['time_end'] }}</td>
-                <td><button><a href="{{ url_for('view_all_check_ins', class_id=course['class_id']) }}">查看</a></button></td>
+                <td>{{ check_in['user_name'] }}</td>
+                <td>{{ check_in['user_phone'] }}</td>
+                <td>{{ check_in['usedate'] }}</td>
             </tr>
             {% endfor %}
         </table>
+        <div class="button-container">
+            <a href="{{ url_for('view_all_check_ins') }}" class="btn-7"><span>返回</span></a>
+        </div>
         <footer>
             <h4>Copyright © FN Sport. All Rights Reserved.</h4>   
         </footer>
